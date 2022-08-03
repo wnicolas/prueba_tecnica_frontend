@@ -1,1 +1,22 @@
-<p>partidos works!</p>
+<button pButton class="mx-2" (click)="getPartidos()">Ver partidos</button>
+<button pButton  (click)="getPartidos()">Ver Tabla</button>
+<table class="table table-hover text-center">
+  <thead>
+    <tr>
+      <th>Local</th>
+      <th>Goles</th>
+      <th>Goles</th>
+      <th>Visitante</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let partido of partidos">
+      <td>{{ partido.id_local }}</td>
+      <td><p-inputNumber [(ngModel)]="partido.goles_local"></p-inputNumber></td>
+      <td>
+        <p-inputNumber  [(ngModel)]="partido.goles_visitante"></p-inputNumber>
+      </td>
+      <td>{{ partido.id_visitante }}</td>
+    </tr>
+  </tbody>
+</table>

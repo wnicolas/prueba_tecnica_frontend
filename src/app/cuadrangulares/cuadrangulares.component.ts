@@ -10,10 +10,23 @@ export class CuadrangularesComponent implements OnInit {
   constructor(private cuadrangularService: CuadrangularService) {}
   value: Date = new Date();
 
-  equipos: any = [{"nombre":"Naciona"},{"nombre":"sdas"},{"nombre":"ghj"},{"nombre":"erte"}];
-  cuadrangular: number | null = null;
+  equipos: any = [
+    { nombre: 'Naciona' },
+    { nombre: 'sdas' },
+    { nombre: 'ghj' },
+    { nombre: 'erte' },
+  ];
+  cuadrangulares: any = [];
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.getCuadrangular();
+  }
+
+  getCuadrangular() {
+    this.cuadrangularService.getCuadrangulares();
+    this.cuadrangulares = this.cuadrangularService._cuadrangular;
+    console.log(this.cuadrangulares);
+  }
 
   nuevoCuadrangular() {
     var validate = true;
@@ -21,13 +34,12 @@ export class CuadrangularesComponent implements OnInit {
       if (equipo.nombre == '') {
         validate = false;
       }
-      
     });
     if (!validate) {
       alert('Todos los equipos deben tener un nombre.');
     }
     this.cuadrangularService.nuevoCuadrangular(this.equipos);
-    // console.log(this.cuadrangularService.cuadrangular.id);
+    this.getCuadrangular();
   }
   nuevoEquipo() {
     this.equipos.push({ nombre: '' });

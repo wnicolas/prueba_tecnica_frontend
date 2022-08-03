@@ -7,11 +7,14 @@ const routes: Routes = [
   {
     path: '',
     component: CuadrangularesComponent,
+    pathMatch: 'full',
   },
   {
-    path: 'partidos',
+    path: 'cuadrangular',
     component: PartidosComponent,
+    pathMatch: 'full',
   },
+  { path: 'cuadrangular/:id', component: PartidosComponent, pathMatch: 'full' },
 ];
 
 @NgModule({
