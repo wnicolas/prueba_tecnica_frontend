@@ -8,17 +8,19 @@ export class CuadrangularService {
   constructor(private http: HttpClient) {}
 
   private _equipos: any[] = [];
-  private _cuadrangular:any=null;
+  private _cuadrangular: any = null;
 
   get equipos() {
     return [...this._equipos];
   }
   get cuadrangular() {
-   return this._cuadrangular
+    return this._cuadrangular;
   }
-  nuevoCuadrangular(): any {
+  nuevoCuadrangular(equipos: any): any {
+    var form = new FormData();
+    form.append('equipos', JSON.stringify(equipos));
     this.http
-      .post<any>('http://localhost/cuadrangular/public/api/cuadrangular', null)
+      .post<any>('http://localhost/cuadrangular/public/api/cuadrangular', form)
       .subscribe((res) => {
         this._cuadrangular = res.data;
       });

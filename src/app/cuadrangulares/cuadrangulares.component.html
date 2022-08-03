@@ -1,6 +1,27 @@
-<p>cuadrangulares works!</p>
 <!-- <p-calendar [(ngModel)]="value"></p-calendar> -->
 
-<p-button label="Click" (click)="nuevoCuadrangular()"></p-button>
-{{ cuadrangular }}
-<p *ngFor="let equipo of equipos">"{{ equipo.nombre }}"</p>
+<p-card header="Registro de equipos">
+  <div class="row">
+    <div class="col my-2" *ngFor="let equipo of equipos">
+      <input
+        type="text"
+        pInputText
+        [(ngModel)]="equipo.nombre"
+        placeholder="Ingrese el nombre del equipo"
+        class="p-inputtext-lg"
+      />
+    </div>
+  </div>
+  <ng-template pTemplate="footer">
+    <p-button
+      label="Registrar equipo"
+      *ngIf="equipos.length < 4"
+      (click)="nuevoEquipo()"
+    ></p-button>
+    <p-button
+      *ngIf="equipos.length == 4"
+      label="Crear cuadrangular"
+      (click)="nuevoCuadrangular()"
+    ></p-button>
+  </ng-template>
+</p-card>
