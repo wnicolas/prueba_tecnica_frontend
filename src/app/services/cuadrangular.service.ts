@@ -53,4 +53,14 @@ export class CuadrangularService {
         // console.log(this._partidos);
       });
   }
+  actualizarMarcador(id: number, goles_local: number, goles_visitante: number) {
+    this.http
+      .patch<any>(`http://localhost/cuadrangular/public/api/partido/${id}`, [
+        goles_local,
+        goles_visitante,
+      ])
+      .subscribe((res) => {
+        console.log(res);
+      });
+  }
 }

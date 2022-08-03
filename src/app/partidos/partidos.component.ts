@@ -21,12 +21,14 @@ export class PartidosComponent implements OnInit {
       this.cuadrangularService.getPartidos(this.id);
       this.partidos = this.cuadrangularService._partidos;
       console.log(this.partidos);
-      
     });
   }
   getPartidos() {
     this.cuadrangularService.getPartidos(this.id);
     this.partidos = this.cuadrangularService._partidos;
     console.log(this.partidos);
+  }
+  actualizarMarcador(id: number,goles_local:number,goles_visitante:number) {
+    this.cuadrangularService.actualizarMarcador(id,goles_local,goles_visitante)
   }
 }

@@ -1,5 +1,5 @@
 <button pButton class="mx-2" (click)="getPartidos()">Ver partidos</button>
-<button pButton  (click)="getPartidos()">Ver Tabla</button>
+<button pButton (click)="getPartidos()">Ver Tabla</button>
 <table class="table table-hover text-center">
   <thead>
     <tr>
@@ -14,9 +14,23 @@
       <td>{{ partido.id_local }}</td>
       <td><p-inputNumber [(ngModel)]="partido.goles_local"></p-inputNumber></td>
       <td>
-        <p-inputNumber  [(ngModel)]="partido.goles_visitante"></p-inputNumber>
+        <p-inputNumber [(ngModel)]="partido.goles_visitante"></p-inputNumber>
       </td>
       <td>{{ partido.id_visitante }}</td>
+      <td>
+        <button
+          pButton
+          (click)="
+            actualizarMarcador(
+              partido.id_partido,
+              partido.goles_local,
+              partido.goles_visitante
+            )
+          "
+        >
+          Actualizar
+        </button>
+      </td>
     </tr>
   </tbody>
 </table>
