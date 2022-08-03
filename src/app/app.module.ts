@@ -5,6 +5,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 // PrimeNg
 import { PrimeNgModule } from './prime-ng/prime-ng.module';
@@ -19,6 +20,7 @@ import { CuadrangularesComponent } from './cuadrangulares/cuadrangulares.compone
     FormsModule,
     BrowserAnimationsModule,
     PrimeNgModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CuadrangularService } from '../services/cuadrangular.service';
 
 @Component({
   selector: 'app-cuadrangulares',
@@ -6,10 +7,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./cuadrangulares.component.css'],
 })
 export class CuadrangularesComponent implements OnInit {
-  constructor() {}
-  value: Date=new Date();
+  constructor(private cuadrangularService: CuadrangularService) {}
+  value: Date = new Date();
 
-  ngOnInit(): void {
-   
+  equipos: any = [];
+  cuadrangular:number|null=null
+
+  ngOnInit(): void {}
+
+  nuevoCuadrangular() {
+    this.cuadrangularService.nuevoCuadrangular();
+    console.log(this.cuadrangularService.cuadrangular.id);
   }
 }

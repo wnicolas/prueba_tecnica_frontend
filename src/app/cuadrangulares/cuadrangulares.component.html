@@ -1,2 +1,6 @@
 <p>cuadrangulares works!</p>
-<p-calendar [(ngModel)]="value"></p-calendar>
+<!-- <p-calendar [(ngModel)]="value"></p-calendar> -->
+
+<p-button label="Click" (click)="nuevoCuadrangular()"></p-button>
+{{ cuadrangular }}
+<p *ngFor="let equipo of equipos">"{{ equipo.nombre }}"</p>
