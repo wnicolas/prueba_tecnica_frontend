@@ -11,9 +11,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { PrimeNgModule } from './prime-ng/prime-ng.module';
 
 import { CuadrangularesComponent } from './cuadrangulares/cuadrangulares.component';
+import { PartidosComponent } from './partidos/partidos.component';
 
 @NgModule({
-  declarations: [AppComponent, CuadrangularesComponent],
+  declarations: [AppComponent, CuadrangularesComponent, PartidosComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
