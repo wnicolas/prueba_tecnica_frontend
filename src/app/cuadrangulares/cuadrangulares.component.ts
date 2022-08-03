@@ -11,10 +11,6 @@ export class CuadrangularesComponent implements OnInit {
   value: Date = new Date();
 
   equipos: any = [
-    { nombre: 'Naciona' },
-    { nombre: 'sdas' },
-    { nombre: 'ghj' },
-    { nombre: 'erte' },
   ];
   cuadrangulares: any = [];
 

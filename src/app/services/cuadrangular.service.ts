@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, OnInit } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import { Observable } from 'rxjs/internal/Observable';
 
 @Injectable({
@@ -25,6 +26,8 @@ export class CuadrangularService {
       .post<any>('http://localhost/cuadrangular/public/api/cuadrangular', form)
       .subscribe((res) => {
         this._cuadrangular = res.data;
+        console.log(res);
+        window.location.href = `http://localhost:4200/cuadrangular/${res.data.id}`;
       });
   }
 
@@ -61,6 +64,9 @@ export class CuadrangularService {
       ])
       .subscribe((res) => {
         console.log(res);
+        if (res.message == 'success') {
+          alert('Marcador actualizado');
+        }
       });
   }
 }
